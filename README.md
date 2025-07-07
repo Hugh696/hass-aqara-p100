@@ -16,4 +16,4 @@
   1. 下载并解压文件
   2. 将Node_Flow 文件夹中的AqaraP100流程.json 导入至Node-RED 中，根据说明填入相关信息
   3. 将HA_Config 文件夹中configuration.yaml 内的代码粘贴进自己Home Assistant 的同名配置文件中，注意缩进，重启HA
-  4. HA仪 表盘新建一个部件，选择以YAML 编辑，将HA_Config 文件夹中dashboards.yaml 内容粘贴至此
+  4. HA 仪表盘新建一个部件，选择以YAML 编辑，将HA_Config 文件夹中dashboards.yaml 中的内容粘贴至此
