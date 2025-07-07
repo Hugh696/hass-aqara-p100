@@ -2,7 +2,7 @@
 通过Aqara 开发者平台，借助Node-RED，将门锁P100的各项状态接入家庭助理
 
 ![1210751746712804_ pic](https://github.com/user-attachments/assets/525a7f52-7ef3-4c04-8f09-641efdcba3cf)
-![1303851751888626_ pic](https://github.com/user-attachments/assets/8514579b-edfd-4c01-91f7-cd565f8344f8)
+<img width="868" alt="image" src="https://github.com/user-attachments/assets/10d1a7d2-039c-41e6-9bd1-8d348d1d102a" />
 
 具体流程：
   1. 在Node-RED 中构建认证流程，通过 HTTP 请求向 Aqara 云平台发送凭据，获取长期访问令牌（AccessToken）
