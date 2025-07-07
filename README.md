@@ -12,6 +12,7 @@
   5. 通过 Webhook 将整理后的事件信息，推送至Home Assistant，生成实体，用于自动化响应或消息展示
 
 使用方法：
+
   0. 前置条件：拥有公网IP、域名；搭建好Home Assistant、Node-RED；注册成为Aqara 开发者并建立项目
   1. 下载并解压文件
   2. 将Node_Flow 文件夹中的AqaraP100流程.json 导入至Node-RED 中，根据说明填入相关信息
