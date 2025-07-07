@@ -1,0 +1,40 @@
+type: grid
+cards:
+  - type: vertical-stack
+    cards: []
+    title: Aqara P100
+    grid_options:
+      columns: 12
+      rows: 1
+  - type: entity
+    entity: sensor.men_de_zhuang_tai
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: entities
+    entities:
+      - entity: sensor.men_suo_gan_dian_chi_dian_liang
+        name: 干电池
+      - entity: sensor.men_suo_li_dian_chi_dian_liang
+        name: 锂电池
+    grid_options:
+      columns: 6
+      rows: 2
+  - type: glance
+    entities:
+      - entity: sensor.kai_men_zhe
+      - entity: sensor.kai_suo_fang_shi
+    grid_options:
+      columns: 6
+      rows: auto
+  - type: glance
+    entities:
+      - entity: sensor.fang_she_zhuang_tai
+      - entity: sensor.fan_suo_zhuang_tai
+    grid_options:
+      columns: 6
+      rows: auto
+  - type: entities
+    entities:
+      - entity: sensor.te_shu_shi_jian
+column_span: 1

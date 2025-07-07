@@ -1,0 +1,75 @@
+# WebHook 传入数据
+template:
+  # Aqara P100
+  - trigger:
+    - platform: webhook
+      webhook_id: aqara_p100
+    sensor:
+      - name: "门的状态"
+        state: >
+          {% set men_de_zhuang_tai = {
+            "0": "室内开门",
+            "1": "已关闭",
+            "15": "室外开门"
+          } %}
+          {{ men_de_zhuang_tai.get(trigger.json.men_de_zhuang_tai, "未知状态") }}
+        icon: mdi:door
+      - name: "开门者" # 这里需要修改用户ID
+        state: >
+          {% set kai_men_zhe = {
+            "2147000001": "用户1",
+            "2147000002": "用户2",
+            "2147000003": "用户3",
+            "2147000004": "用户4"
+          } %}
+          {{ kai_men_zhe.get(trigger.json.kai_men_zhe, "未知人员") }}
+        icon: mdi:account
+      - name: "开锁方式"
+        state: >
+          {% set kai_suo_fang_shi = {
+            "0": "指纹",
+            "1": "密码",
+            "2": "NFC",
+            "3": "HomeKit",
+            "4": "一次性密码",
+            "5": "钥匙"
+          } %}
+          {{ kai_suo_fang_shi.get(trigger.json.kai_suo_fang_shi, "未知方式") }}
+        icon: mdi:door-open
+      - name: "特殊事件"
+        state: >
+          {% set te_shu_shi_jian = {
+            "2": "长时间未关",
+            "3": "有人按门铃",
+            "5": "门虚掩",
+            "1": "门外有人长时间逗留",
+            "3235774474": "验证错误次数过多",
+            "3235774471": "钥匙没拔",
+            "999": "暂无"
+          } %}
+          {{ te_shu_shi_jian.get(trigger.json.te_shu_shi_jian, "未知事件") }}
+        icon: mdi:alarm-light
+      - name: "方舌状态"
+        state: >
+          {% set fang_she_zhuang_tai = {
+            "0": "未上锁",
+            "1": "已上锁"
+          } %}
+          {{ fang_she_zhuang_tai.get(trigger.json.fang_she_zhuang_tai, "未知状态") }}
+        icon: mdi:door-closed-lock
+      - name: "反锁状态"
+        state: >
+          {% set fan_suo_zhuang_tai = {
+            "0": "未反锁",
+            "1": "已反锁"
+          } %}
+          {{ fan_suo_zhuang_tai.get(trigger.json.fan_suo_zhuang_tai, "未知状态") }}
+        icon: mdi:lock
+      - name: "门锁干电池电量"
+        state: "{{ trigger.json.gan_dian_chi }}"
+        unit_of_measurement: "%"
+        icon: mdi:battery-high
+      - name: "门锁锂电池电量"
+        state:  "{{ trigger.json.li_dian_chi }}"
+        unit_of_measurement: "%"
+        icon: mdi:battery
